@@ -62,8 +62,7 @@ Architecture
                      ▼
                 Global Model
 
-
-
+```
 ---
 HAFI-FL studies whether these factors can be jointly considered during:
 
@@ -120,3 +119,5 @@ Same clients
 Different aggregation algorithms
      ↓
 Compare learning behavior
+```
+
