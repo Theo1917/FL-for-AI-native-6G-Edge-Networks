@@ -7,3 +7,21 @@ The Problem here is the real edge devices have Non-IID data , Limited Bandwidth,
 Unreliable clients. 
 
 So the baselines models like Fedavg, Fedprox wont usually work over here as the problems mentioned above exists.
+
+THE SOLUTION WE CAME UP WITH :
+														 Clients
+																|
+														 Training
+																|
+													HAFI Intelligence   
+																|
+													Top-K Compression
+																|
+													Edge Aggregation 
+																|
+													Regional Aggregation
+																|
+													 Global Model 
+In HAFI the features which are taken into considerations are :
+
+
