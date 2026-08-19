@@ -61,3 +61,62 @@ Architecture
                      │
                      ▼
                 Global Model
+
+
+
+---
+HAFI-FL studies whether these factors can be jointly considered during:
+
+- Client selection
+- Model aggregation
+- Update filtering
+- Communication
+- Edge-level coordination
+
+The main objective is to achieve a better balance between **accuracy, communication efficiency and network reliability**.
+
+---
+
+Experimental Setup
+
+| Parameter | Configuration |
+|---|---|
+| Dataset | MNIST |
+| Clients | 20 |
+| Communication Rounds | 20 |
+| Data Distribution | Non-IID |
+| Dirichlet α | 0.18 |
+| Model | MLP |
+| Model Architecture | 784 → 128 → 10 |
+| Local Epochs | 1 |
+| Batch Size | 64 |
+| Evaluation | Multi-seed, Ablation & Stress Testing |
+
+---
+
+Algorithms Compared
+
+The framework compares HAFI-FL against established Federated Learning approaches:
+
+- **FedAvg** – Standard federated averaging
+- **FedProx** – Handles client heterogeneity using proximal regularization
+- **Personalized-FL** – Allows client-specific adaptation
+- **Median** – Robust aggregation baseline
+- **Trimmed Mean** – Robust aggregation baseline
+- **HAFI-FL** – Proposed framework
+- **HAFI-FL + Top-K** – Communication-efficient HAFI variant
+
+---
+
+
+
+### Two Main Comparison Modes
+
+**Aggregation-only experiment**
+
+```text
+Same clients
+     ↓
+Different aggregation algorithms
+     ↓
+Compare learning behavior
