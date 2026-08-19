@@ -1,27 +1,63 @@
-HAFL - FL 6G Edge Federated Learning 
+HAFI-FL
+Federated Learning for AI-Native 6G Edge Networks
 
-Basically building a Federative Learning Framework For AI Native 6G edge networks where 
-devices train locally and share the model updates instead of private data .
-
-The Problem here is the real edge devices have Non-IID data , Limited Bandwidth, Latency, Random Client Droupouts, 
-Unreliable clients. 
-
-So the baselines models like Fedavg, Fedprox wont usually work over here as the problems mentioned above exists.
-
-THE SOLUTION WE CAME UP WITH :
-														 Clients
-																|
-														 Training
-																|
-													HAFI Intelligence   
-																|
-													Top-K Compression
-																|
-													Edge Aggregation 
-																|
-													Regional Aggregation
-																|
-													 Global Model 
-In HAFI the features which are taken into considerations are :
+> A simulation-based Federated Learning framework designed to study model training under heterogeneous data, unreliable clients, network constraints, mobility and limited communication in 6G edge environments.
 
 
+In traditional Federated Learning, clients train locally and send model updates to a central server.
+
+Real 6G edge networks are more challenging because clients can have:
+
+- Different / non-IID data
+- Limited bandwidth
+- Variable latency
+- Dropouts and unreliable connections
+- Mobility and handovers
+- Different update quality
+- Communication constraints
+
+**HAFI-FL** addresses these challenges by combining **client intelligence, network awareness, hierarchical aggregation and communication-efficient updates**.
+
+---
+
+Architecture
+
+```text
+             Global Aggregator
+                     ▲
+                     │
+             Regional Aggregator
+                     ▲
+                     │
+                Edge Nodes
+                     ▲
+                     │
+        ┌────────────┼────────────┐
+        │            │            │
+     Client 1     Client 2    Client N
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+               Local Training
+                     │
+                     ▼
+               HAFI Analysis
+          ┌──────────┼──────────┐
+          │          │          │
+      Reputation  Diversity  Scheduling
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+             Edge Filtering
+                     │
+                     ▼
+            Top-K Compression
+                     │
+                     ▼
+              Network Delivery
+                     │
+                     ▼
+           Hierarchical Aggregation
+                     │
+                     ▼
+                Global Model
